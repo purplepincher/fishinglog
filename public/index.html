@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>FishingLog — hot‑spot detection</title>
-<meta name="description" content="fishinglog-agent (Captain's Mate) is a real, published Python package for hot-spot detection and pattern-finding across logged fishing sessions. Installable today; no polished product wrapped around it yet." />
-<meta property="og:title" content="FishingLog — hot-spot detection" />
-<meta property="og:description" content="A real, published Python package for hot-spot detection across logged fishing sessions. Installable today; no polished product wrapped around it yet." />
+<title>FishingLog — Captain's Mate</title>
+<meta name="description" content="fishinglog-agent (Captain's Mate) is a real, published Python client for logging fishing sessions to a PLATO server and querying them back by species, recency, or location, with a simple natural-language question interface. Installable today; no polished product wrapped around it yet." />
+<meta property="og:title" content="FishingLog — Captain's Mate" />
+<meta property="og:description" content="A real, published Python client for logging fishing sessions to a PLATO server and querying them back by species, recency, or location. Installable today; no polished product wrapped around it yet." />
 <meta property="og:url" content="https://fishinglog.ai/" />
 <meta property="og:type" content="website" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -440,9 +440,9 @@ footer span.sep { margin: 0 10px; color: var(--line); }
   <div class="wrap">
     <p class="eyebrow">FishingLog</p>
     <!-- COPY: HERO_HEADLINE -->
-    <h1>Find the patterns that only show up across many sessions</h1>
+    <h1>A simple PLATO client for fishing sessions</h1>
     <!-- COPY: HERO_SUBHEAD -->
-    <p class="subhead">DeckBoss captures the trip. Captain's Mate looks across trips — depth, tide, species, location — to find the hot spots that no single day can reveal. It is a sibling analytical tool to DeckBoss, not a competitor or rebrand.</p>
+    <p class="subhead">Captain's Mate logs trips to a PLATO server and queries them back by species, recency, or location, with a lightweight natural-language question interface on top. It is a sibling logging-and-recall tool to DeckBoss, not a competitor or rebrand.</p>
   </div>
 </section>
 
@@ -450,7 +450,7 @@ footer span.sep { margin: 0 10px; color: var(--line); }
   <div class="wrap">
     <!-- COPY: WHAT_THIS_IS -->
     <h2>What This Is</h2>
-    <p><code>fishinglog-agent</code> ("Captain's Mate") is a real Python package, published on <a href="https://pypi.org/project/fishinglog-agent/">PyPI</a>, for hot‑spot detection and pattern‑finding across logged fishing sessions.</p>
+    <p><code>fishinglog-agent</code> ("Captain's Mate") is a real Python package, published on <a href="https://pypi.org/project/fishinglog-agent/">PyPI</a>. It is a client for a PLATO server: it POSTs session records, GETs them back, and filters by species, recency, and a rough haversine-style radius. A simple natural-language interface sits on top of that filtering — useful for recall, not statistical analysis.</p>
 
     <section class="demo-card quickstart">
       <!-- COPY: REAL_QUICKSTART (final) -->
@@ -471,7 +471,10 @@ agent.log_session(
     </section>
 
     <!-- COPY: HONESTY_NOTE -->
-    <p class="honesty-note"><em>Honesty note: <code>fishinglog-agent</code> ("Captain's Mate") is a real, published PyPI package. There is no slick product wrapped around it yet, but the code is installable today and the hot-spot logic is real.</em></p>
+    <p class="honesty-note"><em>Honesty note: <code>fishinglog-agent</code> ("Captain's Mate") is a real, published PyPI package. There is no slick product wrapped around it yet, but the code is installable today and the logging and query logic is real.</em></p>
+
+    <!-- COPY: PLATO_NOTE -->
+    <p class="honesty-note"><em>PLATO note: this is a client, not a standalone tool. Logging or querying anything beyond <code>import</code> requires a running PLATO server at the <code>plato_url</code> you pass in.</em></p>
   </div>
 </section>
 
