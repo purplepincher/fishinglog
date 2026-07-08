@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>FishingLog — Captain's Mate</title>
-<meta name="description" content="fishinglog-agent (Captain's Mate) is a real, published Python client for logging fishing sessions to a PLATO server and querying them back by species, recency, or location, with a simple natural-language question interface. Installable today; no polished product wrapped around it yet." />
+<meta name="description" content="fishinglog-agent (Captain's Mate) is a real, published Python client for logging fishing sessions to a PLATO server and querying them back by species, recency, or location, with a simple natural-language question interface. Installable today; no polished product wrapped around it yet. Separately — and not yet built — fishinglog.ai is planned (2026-07-08) to become a skin on a shared activelog.ai voice-capture-and-storage core." />
 <meta property="og:title" content="FishingLog — Captain's Mate" />
-<meta property="og:description" content="A real, published Python client for logging fishing sessions to a PLATO server and querying them back by species, recency, or location. Installable today; no polished product wrapped around it yet." />
+<meta property="og:description" content="A real, published Python client for logging fishing sessions to a PLATO server and querying them back by species, recency, or location. Installable today; no polished product wrapped around it yet. Separately, fishinglog.ai is planned (not yet built) to become a skin on a shared activelog.ai core." />
 <meta property="og:url" content="https://fishinglog.ai/" />
 <meta property="og:type" content="website" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -415,6 +415,35 @@ code {
 .honesty-note em { font-style: normal; }
 .honesty-note code { color: var(--shell); }
 
+/* Forward-looking section: visually distinct from the "what's real
+   today" content above it, so a reader cannot blur the line between
+   shipped and planned. Two deliberate distinctions, both token-level:
+     - section.forward-looking gets a hairline top rule + extra top
+       padding, the same separator idiom .chain/.ledger/footer use;
+     - .future-note mirrors .honesty-note's shape but swaps the
+       --hardened (orange) accent for --claw (the family purple), so
+       the eye reads "a different kind of content" — a plan, not a
+       shipped thing's caveat. No new palette values; family tokens
+       only, same as the rest of the page. */
+section.forward-looking {
+  margin-top: 32px;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.future-note {
+  margin: 40px 0 0;
+  padding: 16px 20px;
+  border-left: 2px solid var(--claw);
+  background: rgba(168, 84, 140, 0.07);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.95rem;
+  color: var(--shell-dim);
+  max-width: 62ch;
+}
+.future-note em { font-style: normal; }
+.future-note code { color: var(--shell); }
+
 footer {
   margin-top: 72px;
   padding: 28px 0 48px;
@@ -478,11 +507,51 @@ agent.log_session(
   </div>
 </section>
 
+<section class="body-section forward-looking">
+  <div class="wrap">
+    <!-- COPY: FORWARD_LOOKING_EYEBROW -->
+    <p class="eyebrow">Forward-looking · 2026-07-08</p>
+    <!-- COPY: WHERE_THIS_IS_GOING -->
+    <h2>Where this is going</h2>
+    <p>Everything above is what <code>fishinglog-agent</code> does today. Separately — and not yet built — <code>fishinglog.ai</code> is planned to become one of eight domain-specific skins on top of a shared voice-capture-and-storage core called <a href="https://activelog.ai">activelog.ai</a>. That core is the real work; this skin is a later consequence of it, not a thing being built on this page.</p>
+
+    <p>The shared core, in the shape it's planned in:</p>
+
+    <div class="chain">
+      <div class="chain-step">
+        <span class="chain-num">01</span>
+        <strong>Pick a storage location</strong>
+        <p>A local folder, your own Cloudflare account, Google Drive, a database — yours, not operated by this project.</p>
+      </div>
+      <div class="chain-step">
+        <span class="chain-num">02</span>
+        <strong>Dictate into a structured log</strong>
+        <p>Activate the mic and talk; speech becomes structured log entries, not a raw transcript.</p>
+      </div>
+      <div class="chain-step">
+        <span class="chain-num">03</span>
+        <strong>Organize it</strong>
+        <p>Pause and wake-word detection segment and label the capture as you go.</p>
+      </div>
+      <div class="chain-step">
+        <span class="chain-num">04</span>
+        <strong>Ask it questions</strong>
+        <p>A wake-word chat panel — bring your own model key — reads back and queries what you logged.</p>
+      </div>
+    </div>
+
+    <!-- COPY: FUTURE_STATUS -->
+    <p class="future-note"><em>Status, plainly: this is a real, dated plan (2026-07-08), not yet built. The eight domain-specific skins — this page included — do not start until the <a href="https://activelog.ai">activelog.ai</a> core works for someone who didn't build it, verified the same way the org verifies anything else. When that gate opens, this page is rebuilt on top of the real core — not before. Track actual progress at <a href="https://activelog.ai">activelog.ai</a> and at the org's honest domain registry, <a href="https://purplepincher.org/#domains">purplepincher.org/#domains</a>. No timeline is implied here, because none exists.</em></p>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <a href="https://pypi.org/project/fishinglog-agent/">PyPI</a>
     <span class="sep">·</span>
     <a href="https://github.com/purplepincher/fishinglog">source</a>
+    <span class="sep">·</span>
+    <a href="https://activelog.ai">ActiveLog core</a>
     <span class="sep">·</span>
     <a href="https://purplepincher.org/">PurplePincher family</a>
   </div>
