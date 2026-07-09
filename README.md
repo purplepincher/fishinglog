@@ -1,8 +1,8 @@
 # fishinglog
 
-> **Real today (✓)** – Worker serves static assets from `./public/`; the served page (`public/index.html`) already inlines the family design‑system CSS (tokens + base) as a manual `<style>` block.
-> **Conditional (◐)** – The design‑system source files (`family/tokens.css`, `family/base.css`, `family/provenance-panel.css`) exist but have no automated build pipeline to incorporate them into the served page; the current page is hand‑curated.
-> **Aspirational (→)** – Provenance‑panel component, automation of design‑system inlining across multiple family sites, and any dynamic behaviour beyond static file serving.
+> **Real today (✅)** – Worker serves static assets from `./public/`; the served page (`public/index.html`) already inlines the family design‑system CSS (tokens + base) as a manual `<style>` block.
+> **Conditional (⚠️)** – The design‑system source files (`family/tokens.css`, `family/base.css`, `family/provenance-panel.css`) exist but have no automated build pipeline to incorporate them into the served page; the current page is hand‑curated.
+> **Aspirational (🔮)** – Provenance‑panel component, automation of design‑system inlining across multiple family sites, and any dynamic behaviour beyond static file serving.
 
 ---
 
@@ -76,19 +76,19 @@ After deployment, the Worker is live at the subdomain defined by the `name` fiel
 
 | Capability | Marker | Reason |
 |------------|--------|--------|
-| Use the provenance‑panel component in the served page | ◐ Conditional | The CSS and HTML for the component exist in `family/`, but `public/index.html` does **not** include any `<aside class="provenance-status">` or `.provenance` elements. The component is not wired into any served page. |
-| Automate design‑system inlining via a build script | → Aspirational | The design‑system CSS is currently in the page because it was manually pasted into the `<style>` block of `index.html`. No `build.mjs` or similar script exists. |
-| API endpoints, state‑machine logic, or dynamic data | ✓ Real today (does not exist) | The Worker only forwards to static assets. There is no routing logic, no database binding, no environment variables beyond `ASSETS`. |
-| Serve content for multiple family sites | → Aspirational | The `family/` directory is designed for reuse, but no other repository is set up to consume it. |
-| Host the `fishinglog-agent` Python package source | ◐ Not applicable | The package is an external artifact published on PyPI. The landing page describes it, but its source is not part of this repository. |
+| Use the provenance‑panel component in the served page | ⚠️ Conditional | The CSS and HTML for the component exist in `family/`, but `public/index.html` does **not** include any `<aside class="provenance-status">` or `.provenance` elements. The component is not wired into any served page. |
+| Automate design‑system inlining via a build script | 🔮 Aspirational | The design‑system CSS is currently in the page because it was manually pasted into the `<style>` block of `index.html`. No `build.mjs` or similar script exists. |
+| API endpoints, state‑machine logic, or dynamic data | ✅ Real today (does not exist) | The Worker only forwards to static assets. There is no routing logic, no database binding, no environment variables beyond `ASSETS`. |
+| Serve content for multiple family sites | 🔮 Aspirational | The `family/` directory is designed for reuse, but no other repository is set up to consume it. |
+| Host the `fishinglog-agent` Python package source | ⚠️ Not applicable | The package is an external artifact published on PyPI. The landing page describes it, but its source is not part of this repository. |
 
 ---
 
 ## 5. Honesty markers used in this document
 
-- **✓ Real today** – I traced the claim to actual source code (`src/index.ts`, `wrangler.jsonc`, `public/index.html`, the inline CSS block).
-- **◐ Conditional** – The claim is true in principle (the files exist) but the feature does **not** work in the current deployment because something missing (a build step, live server, API key, or manual inclusion of the component).
-- **→ Aspirational** – The claim describes a direction that is documented in `family/README.md` but is not implemented.
+- **✅ Real today** – I traced the claim to actual source code (`src/index.ts`, `wrangler.jsonc`, `public/index.html`, the inline CSS block).
+- **⚠️ Conditional** – The claim is true in principle (the files exist) but the feature does **not** work in the current deployment because something missing (a build step, live server, API key, or manual inclusion of the component).
+- **🔮 Aspirational** – The claim describes a direction that is documented in `family/README.md` but is not implemented.
 
 If you spot a claim that should be marked differently, please open an issue.
 

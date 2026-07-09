@@ -32,9 +32,9 @@ This was done **manually** – there is no automated build script that concatena
 
 The implications:
 
-- The design‑system CSS is applied to the served page and is verifiable by examining the single HTML file. ✓ **Real today**
-- Adding the provenance‑panel component would require manually inserting both the CSS (already present in `family/provenance-panel.css`) and the HTML fragment (`family/provenance-panel.html`) into the page. No automation. ◐ Conditional
-- When multiple family sites need to share the design system, a build script that performs this inlining automatically will become necessary. → Aspirational
+- The design‑system CSS is applied to the served page and is verifiable by examining the single HTML file. ✅ **Real today**
+- Adding the provenance‑panel component would require manually inserting both the CSS (already present in `family/provenance-panel.css`) and the HTML fragment (`family/provenance-panel.html`) into the page. No automation. ⚠️ Conditional
+- When multiple family sites need to share the design system, a build script that performs this inlining automatically will become necessary. 🔮 Aspirational
 
 ---
 
@@ -49,9 +49,9 @@ Inlining eliminates the second host, making each Worker truly self‑contained. 
 
 ## Honesty marker for this document
 
-- **✓ Real today** – the rationale matches the contents of `family/README.md` and the actual implementation in `public/index.html`.
-- **◐ Conditional** – adding the provenance‑panel is possible but not done; the CSS for it exists but is not deployed.
-- **→ Aspirational** – automating the inlining with a build script is documented but not implemented.
+- **✅ Real today** – the rationale matches the contents of `family/README.md` and the actual implementation in `public/index.html`.
+- **⚠️ Conditional** – adding the provenance‑panel is possible but not done; the CSS for it exists but is not deployed.
+- **🔮 Aspirational** – automating the inlining with a build script is documented but not implemented.
 
 ---
 
